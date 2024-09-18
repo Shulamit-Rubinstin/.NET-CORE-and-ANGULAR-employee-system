@@ -1,0 +1,37 @@
+<!-- <form [formGroup]="addRole">
+    <select (select)="minDate()" name="roles" formControlName="roleId">
+        <option *ngFor="let r of role" [value]="r.id" [disabled]="r.selected" >{{r.name}} {{r.id}}
+        </option>
+    </select>
+    <label>
+        Is Manager:
+        <input type="checkbox" formControlName="isManager">
+    </label>
+    <input type="date" formControlName="startDate" [min]="showFromDate | date:'yyyy-MM-dd'">
+    
+role
+    <button (click)="save()">save changes</button>
+</form>
+ -->
+ <form [formGroup]="addRole">
+    <mat-form-field appearance="fill">
+      <mat-label>בחר תפקיד</mat-label>
+      <mat-select formControlName="roleId">
+        <mat-option *ngFor="let role of roles" [value]="role.id" [disabled]="role.disabled">
+          {{ role.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-checkbox formControlName="isManager">האם מנהל?</mat-checkbox>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>תאריך התחלה</mat-label>
+      <input matInput [min]="showFromDate | date:'yyyy-MM-dd'" type="date" formControlName="startDate">
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="saveRole()">SAVE CHANGES</button>
+  </form>
+  
+  <button mat-raised-button color="accent" (click)="saveEmployee()">שמור עובד</button>
+  

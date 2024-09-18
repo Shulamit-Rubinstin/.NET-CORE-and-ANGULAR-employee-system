@@ -1,0 +1,46 @@
+/* edit-employee.component.css */
+
+.edit-employee-dialog {
+    white-space-collapse: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-employee-dialog h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .edit-employee-dialog input[type="text"],
+  .edit-employee-dialog input[type="number"],
+  .edit-employee-dialog input[type="date"],
+  .edit-employee-dialog textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .edit-employee-dialog .button-container {
+    text-align: right;
+  }
+  
+  .edit-employee-dialog button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .edit-employee-dialog button:hover {
+    background-color: #0056b3;
+  }
+  

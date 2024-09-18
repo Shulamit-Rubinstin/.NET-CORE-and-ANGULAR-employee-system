@@ -1,0 +1,24 @@
+<form [formGroup]="addForm">
+    <mat-form-field>
+        <mat-label>שם פרטי</mat-label>
+        <input matInput type="text" formControlName="firstName" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>שם משפחה</mat-label>
+        <input matInput type="text" formControlName="lastName" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>תעודת זהות</mat-label>
+        <input matInput type="text" formControlName="identity" required>
+    </mat-form-field>
+    <div>
+        <label>תפקידים</label>
+        <div *ngFor="let role of this.emp.roles">
+            {{role | json}}
+        </div>
+        <h3 (click)="addRole = true">הוסף תפקיד</h3>
+        <app-add-role *ngIf="addRole" (onSave)="addRoleToEmployee($event)"></app-add-role>
+
+    </div>
+    <button mat-raised-button color="primary" (click)="saveEmployee()">שמור עובד</button>
+</form>

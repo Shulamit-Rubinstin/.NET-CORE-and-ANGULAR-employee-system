@@ -1,0 +1,28 @@
+<div class="edit-employee-dialog">
+    <h1>Edit Employee</h1>
+  
+    <div *ngIf="employee">
+      <p>First Name: <input type="text" [(ngModel)]="employee.firstName"></p>
+      <p>Last Name: <input type="text" [(ngModel)]="employee.lastName"></p>
+  
+      <h2>Edit Roles</h2>
+      <div *ngFor="let role of employee.roles; let i=index">
+        <p>Role {{ i + 1 }}</p>
+        <p>Start Date: <input type="date" [(ngModel)]="role.startDate"></p>
+        <p>Is Manager: <input type="checkbox" [(ngModel)]="role.isManager"></p>
+      </div>
+  
+      <!-- Add button to show add role component -->
+  
+      <!-- Show add role component when addRole is true -->
+    
+    </div>
+    <div *ngIf="addRole">
+        <app-add-role (onSave)="addRoleToEmployee($event)"></app-add-role>
+      </div>
+      <button mat-button (click)="addRole=true">Add Role</button>
+
+    <button mat-button (click)="save()">Save</button>
+    <button mat-button (click)="cancel()">Cancel</button>
+  </div>
+  
